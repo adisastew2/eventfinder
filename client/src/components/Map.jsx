@@ -36,11 +36,13 @@ class Map extends React.Component {
     this.setState({center: nextProps.mapCenter});
 
     let events = nextProps.events;
+    console.log("events: ", events);
     let venues = events.map((event) => {
       return {
         lat: event.latitude,
         lng: event.longitude,
-        name: event.venue
+        name: event.venue,
+        headLine: event.headline
       }
     });
     this.setState({
@@ -51,7 +53,7 @@ class Map extends React.Component {
   render() {
     let context = this;
     let markers = this.state.markerLocs.map((loc) => {
-      return <Markers hovered={this.props.hovered} name={loc.name} lat={loc.lat} lng={loc.lng} />
+      return <Markers hovered={this.props.hovered} name={loc.name} lat={loc.lat} lng={loc.lng} headLine={loc.headLine} />
     });
     return (
       <div style={style}>

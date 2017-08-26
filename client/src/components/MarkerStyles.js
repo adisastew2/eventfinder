@@ -19,5 +19,18 @@ export const markerStyleHover = {
 
   border: '5px solid #0000CD',
   borderRadius: 20,
-  backgroundColow: 'white'
+  backgroundColor: 'white'
+}
+
+export const pStyleHover = {
+  position: 'absolute',
+  width: 1000,
+  height: 200,
+  // left: -10,
+  // right: -10,
+
+  // border: '50px solid #FFFFFF',
+  // borderRadius: 20,
+  fontSize: "3rem",
+  backgroundColor: 'white'
 }

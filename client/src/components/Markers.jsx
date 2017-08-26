@@ -10,10 +10,16 @@ export default class Markers extends React.Component {
       lat: this.props.lat,
       lng: this.props.lng,
       name: this.props.name,
-      headLind: this.props.headLine
+      headLine: this.props.headLine
     }
   }
-  
+
+  handleClick() {
+    console.log('WAS CLICKED', this.state.headLine);
+    this.props.handleArtistClick(this.state.headLine);
+  }
+
+
   render() {
     
     // if the marker itself is being hovered or if the name of the venue corresponding to the
@@ -26,7 +32,7 @@ export default class Markers extends React.Component {
       console.log('hovered!');
       return (
         <div>
-          <div style={style}>
+          <div onClick={this.handleClick.bind(this)} style={style}>
           </div>
 
           <br/>
@@ -35,7 +41,6 @@ export default class Markers extends React.Component {
           <div style={pStyleHover}>
             <p> Concert Name: {this.props.headLine} </p>
             <p> Venue: {this.props.name} </p>
-
           </div>
           
         </div>

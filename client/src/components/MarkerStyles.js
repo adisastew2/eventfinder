@@ -24,8 +24,8 @@ export const markerStyleHover = {
 
 export const pStyleHover = {
   position: 'absolute',
-  width: 1000,
-  height: 200,
+  width: 500,
+  height: 150,
   // left: -10,
   // right: -10,
 

@@ -26,11 +26,7 @@ class Map extends React.Component {
     }
   }
 
-  handleClick(event) {
-    // should there even be a handleClick for the map itself?
-    // or should there just be a hover event for markers?
-    // or should clicking on the marker highlight all concerts at that venue?
-  }
+ 
 
   componentWillReceiveProps(nextProps) {
     this.setState({center: nextProps.mapCenter});
@@ -50,10 +46,11 @@ class Map extends React.Component {
     });
   }
 
+
   render() {
     let context = this;
     let markers = this.state.markerLocs.map((loc) => {
-      return <Markers hovered={this.props.hovered} name={loc.name} lat={loc.lat} lng={loc.lng} headLine={loc.headLine} />
+      return <Markers handleArtistClick={this.props.handleArtistClick} hovered={this.props.hovered} name={loc.name} lat={loc.lat} lng={loc.lng} headLine={loc.headLine} />
     });
     return (
       <div style={style}>

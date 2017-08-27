@@ -196,7 +196,7 @@ class App extends React.Component {
         </Row>
         <Row>
           <Col md={6}>
-            <Map mapCenter={this.state.mapCenter} hovered={this.state.hoveredEvent} events={this.state.events}/>
+            <Map handleArtistClick={this.handleArtistClick} mapCenter={this.state.mapCenter} hovered={this.state.hoveredEvent} events={this.state.events}/>
           </Col>
           <Col md={6}>
           <Row>
@@ -206,6 +206,7 @@ class App extends React.Component {
           </Row>
           <Row>
             <Col md={12}>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Songkick_logo.jpg/799px-Songkick_logo.jpg" height="75" width="300" />
               <ReactScrollbar style={scrollbar}>
                 <Concerts handleHover={this.handleHover} events={this.state.events} handleArtistClick={this.handleArtistClick}/>
               </ReactScrollbar>

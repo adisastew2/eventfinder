@@ -27,22 +27,27 @@ router.post('/', (req, res) => {
     }
   })
   .then((url) => {
-    // api call to songkick
-    axios.get(url)
-    .then((events) => {
-      let data = events.data.resultsPage.results.event;
-      // create event in events table for each event in events
-      async.each(data, (event, callback) => {
-        db.createEvent(event).then(callback);
-      }, (err, results) => {
-        // retrieve new events from db
-        db.getEvents(date, lat, lng)
-          .then((events) => {
-            //send to client
-            res.send(events);
-          });
+    if (url) {
+      console.log('Has No Database Records')
+      // api call to songkick
+      axios.get(url)
+      .then((events) => {
+        let data = events.data.resultsPage.results.event;
+        // create event in events table for each event in events
+        async.each(data, (event, callback) => {
+          db.createEvent(event).then(callback);
+        }, (err, results) => {
+          // retrieve new events from db
+          db.getEvents(date, lat, lng)
+            .then((events) => {
+              //send to client
+              res.send(events);
+            });
+        });
       });
-    });
+    } else {
+      console.log('Has Database Records')
+    }
  
   })
   .catch((err) => {

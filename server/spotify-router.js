@@ -8,7 +8,7 @@ let redirect_uri;
 let domain;
 
 if (process.env.NODE_ENV === 'production') {
-	redirect_uri = 'https://concertmate.herokuapp.com/spotify/callback/';
+	redirect_uri = 'https://concertmate8-17.herokuapp.com/spotify/callback/';
   domain = 'https://concertmate8-17.herokuapp.com/';
 } else {
 	redirect_uri = 'http://localhost:1337/spotify/callback/';

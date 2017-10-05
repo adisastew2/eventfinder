@@ -15,8 +15,8 @@ if (process.env.NODE_ENV === 'production') {
   domain = 'http://localhost:1337';
 }
 let spotifyCredentials = {
-	client_id: '1b4dd6acf0c14120b5fa6ae37b4c773a',
-	client_secret: '365aec3923fe452fbbeb31fe842c2a4c',
+	client_id: '0454aa601a244e1eba920915d9c1fad5',
+	client_secret: '9f3701dc2804434a9a9cfc791f286806',
 	redirect_uri: redirect_uri
 };
 
